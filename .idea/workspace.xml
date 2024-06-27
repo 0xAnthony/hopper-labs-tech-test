@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29f0a854-c749-452a-bf38-f4c521fa5f36" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Vault/DepositTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Vault/DepositTable.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1719321986651</updated>
       <workItem from="1719321988648" duration="46722000" />
-      <workItem from="1719504157195" duration="5601000" />
+      <workItem from="1719504157195" duration="5795000" />
     </task>
     <servers />
   </component>
