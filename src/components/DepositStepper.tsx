@@ -1,6 +1,11 @@
 import styles from "@/styles/depositStepper.module.scss"
 
-export const DepositStepper = ({currentStep, stepLoading}) => {
+interface DepositStepperProps {
+    currentStep: number;
+    stepLoading: boolean;
+}
+
+export const DepositStepper: React.FC<DepositStepperProps> = ({currentStep, stepLoading}) => {
     // Make it dynamically displayed to easily add new steps
     let steps = ["Approval", "Deposit"];
     return (

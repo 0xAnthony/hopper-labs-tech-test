@@ -2,7 +2,7 @@ import styles from "@/styles/dev.module.scss";
 import {DECIMALS_6_MULTIPLIER} from "@/utils/constants";
 import {useWaitForTransactionReceipt, useWriteContract} from "wagmi";
 import {useEffect} from "react";
-import {UsdcContract} from "@/utils/wagmiContractConfig";
+import {contracts} from "@/utils/wagmiContractConfig";
 
 export const MintButton = () => {
     const { data: hash, error, writeContract } = useWriteContract()
@@ -15,7 +15,7 @@ export const MintButton = () => {
     const mintUSDC = async () => {
         console.log("MINTING 1_000_000 USDC ...")
         writeContract({
-            ...UsdcContract,
+            ...contracts.USDC.data,
             functionName: 'mint',
             args: ["0xc28c67FB2Ba206EEC354609356068a0D9CA99e0f", 1000000n * DECIMALS_6_MULTIPLIER],
         })

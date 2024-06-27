@@ -1,8 +1,13 @@
 import {DECIMALS_6_MULTIPLIER, EXPLORER_URL} from "@/utils/constants";
 import {shortenAddress} from "@/utils/adresses";
 import {toReadableValue} from "@/utils/numbers";
+import {CompleteLog} from "@/types/logs";
 
-export const DepositTable = ({logs}) => {
+interface DepositTableProps {
+    logs: CompleteLog[];
+}
+
+export const DepositTable: React.FC<DepositTableProps> = ({logs}) => {
     return (
         <>
             <table>
@@ -23,22 +28,25 @@ export const DepositTable = ({logs}) => {
                     <tr key={log.transactionHash}>
                         <td>
                             {log.blockData ?
-                                new Date(parseInt(log.blockData.timestamp) * 1000).toLocaleString()
+                                new Date(`${log.blockData.timestamp.toString()}000`).toLocaleString()
                                 : "Error fetching time"}
                         </td>
                         <td>
-                            <a href={`${EXPLORER_URL}/block/${log.blockNumber.toString()}`} target="_blank">
-                                {log.blockNumber.toString()}
-                            </a>
+                            {!!log.blockNumber &&
+                                <a href={`${EXPLORER_URL}/block/${log.blockNumber.toString()}`} target="_blank">
+                                    {log.blockNumber.toString()}
+                                </a>}
                         </td>
                         <td>
-                            <a href={`${EXPLORER_URL}/tx/${log.transactionHash}`} target="_blank">
+                            {log.transactionHash &&
+                                <a href={`${EXPLORER_URL}/tx/${log.transactionHash}`} target="_blank">
                                 {shortenAddress(log.transactionHash)}
-                            </a>
+                            </a>}
+
                         </td>
                         <td>
                             <a href={`${EXPLORER_URL}/address/${log.args.owner}`} target="_blank">
-                                {shortenAddress(log.args.owner)}
+                                {shortenAddress(log.args!.owner)}
                             </a>
                         </td>
                         <td>{(log.args.assets / log.args.shares).toString()}</td>

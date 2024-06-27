@@ -1,4 +1,4 @@
-export const toReadableValue = (value: BigInt, decimals: BigInt): string => {
+export const toReadableValue = (value: bigint, decimals: bigint): string => {
     if (value === null) {
         return "0"
     }
@@ -15,7 +15,7 @@ export const toReadableValue = (value: BigInt, decimals: BigInt): string => {
     return formattedValue;
 };
 
-export const fromReadableValue = (value: String, decimals: BigInt): BigInt => {
+export const fromReadableValue = (value: String, decimals: bigint): bigint => {
     if (value === "") {
         return 0n
     }

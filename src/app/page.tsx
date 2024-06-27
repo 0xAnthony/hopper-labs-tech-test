@@ -2,7 +2,7 @@
 
 import styles from "./page.module.scss";
 import {useAccount, useReadContracts, useWaitForTransactionReceipt, useWriteContract} from "wagmi";
-import {UsdcContract, VaultContract} from "@/utils/wagmiContractConfig";
+import {contracts} from "@/utils/wagmiContractConfig";
 import {useEffect, useState} from "react";
 import {fromReadableValue, toReadableValue} from "@/utils/numbers";
 import {DECIMALS_6, DECIMALS_6_MULTIPLIER} from "@/utils/constants";
@@ -36,9 +36,9 @@ export default function Home() {
         toast('Requesting approval', {id: "approval", icon: "➡️"});
         setSentValue(fromReadableValue(inputValue, DECIMALS_6))
         approvalWrite({
-            ...UsdcContract,
+            ...contracts.USDC.data,
             functionName: 'approve',
-            args: [VaultContract.address, fromReadableValue(inputValue, DECIMALS_6)],
+            args: [contracts.Vault.data.address, fromReadableValue(inputValue, DECIMALS_6)],
         })
     }
     useEffect(() => {
@@ -68,7 +68,7 @@ export default function Home() {
     const deposit = () => {
         toast('Requesting deposit', {id: "deposit", icon: "➡️"});
         depositWrite({
-            ...VaultContract,
+            ...contracts.Vault.data,
             functionName: 'deposit',
             args: [sentValue, address],
         })
@@ -96,28 +96,28 @@ export default function Home() {
     }, [isDepositSuccessful]);
 
     // Data fetching
-    const {data} = useReadContracts({
+    const {data } = useReadContracts({
         contracts: [
             {
-                ...UsdcContract,
+                ...contracts.USDC.data,
                 functionName: 'balanceOf',
                 args: [address],
             },
             {
-                ...VaultContract,
+                ...contracts.Vault.data,
                 functionName: 'balanceOf',
                 args: [address]
             },
             {
-                ...UsdcContract,
+                ...contracts.USDC.data,
                 functionName: 'allowance',
-                args: [address, VaultContract.address]
+                args: [address, contracts.Vault.data.address]
             },
         ],
     })
     useEffect(() => {
         if (Array.isArray(data)) {
-            const [_balance, _shares, _allowance] = data.map(x => x.result);
+            const [_balance, _shares, _allowance] = data.map((x) => x.result as bigint);
             setBalance(_balance);
             setShares(_shares);
             setAllowance(_allowance);
@@ -147,7 +147,7 @@ export default function Home() {
 
                 {
                     balance >= fromReadableValue(inputValue, DECIMALS_6) ?
-                    allowance < fromReadableValue(inputValue, DECIMALS_6) || fromReadableValue(inputValue, DECIMALS_6) == 0 ?
+                    allowance < fromReadableValue(inputValue, DECIMALS_6) || fromReadableValue(inputValue, DECIMALS_6) === 0n ?
                         <button onClick={increaseAllowance}
                                 disabled={fromReadableValue(inputValue, DECIMALS_6) > balance || isApprovalPending}>{isApprovalPending ? 'Confirming...' : 'Approve (1/2)'}</button> :
                         <button onClick={deposit}

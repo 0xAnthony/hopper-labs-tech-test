@@ -1,7 +1,13 @@
 import {Abi} from "viem";
 
 export interface Contract {
-    address: string;
+    address: `0x${string}`;
     abi: Abi;
-    deployBlock: bigint;
+}
+
+export interface Contracts {
+    [key: string]: {
+        data: Contract;
+        deployBlock: bigint;
+    };
 }

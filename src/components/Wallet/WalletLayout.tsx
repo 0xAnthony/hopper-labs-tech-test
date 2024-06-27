@@ -37,7 +37,7 @@ export function WalletLayout({ children, initialState }: Props) {
                     <ConnectWallet />
                 </nav>
                 {children}
-                <MintButton className={styles.mintUsdc}/>
+                <MintButton/>
             </QueryClientProvider>
         </WagmiProvider>
     )

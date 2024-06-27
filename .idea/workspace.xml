@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29f0a854-c749-452a-bf38-f4c521fa5f36" name="Changes" comment="" />
+    <list default="true" id="29f0a854-c749-452a-bf38-f4c521fa5f36" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ABIs/USDC.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/ABIs/USDC.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ABIs/Vault.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/ABIs/Vault.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/vault/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/vault/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DepositStepper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DepositStepper.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dev/MintButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dev/MintButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Vault/DepositTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Vault/DepositTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Vault/RecentTransactions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Vault/RecentTransactions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/contracts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/contracts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/logs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/logs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/adresses.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/adresses.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/numbers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/numbers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/wagmiContractConfig.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/wagmiContractConfig.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,21 +44,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jsx.switch.disabled": "true",
-    "last_opened_file_path": "/Users/anthony/PhpstormProjects/hopper-labs-tech-test/src/styles",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/Users/anthony/PhpstormProjects/hopper-labs-tech-test/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jsx.switch.disabled&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/anthony/PhpstormProjects/hopper-labs-tech-test/src/styles&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/anthony/PhpstormProjects/hopper-labs-tech-test/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -72,7 +87,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1719321986651</updated>
-      <workItem from="1719321988648" duration="43284000" />
+      <workItem from="1719321988648" duration="46722000" />
+      <workItem from="1719504157195" duration="5090000" />
     </task>
     <servers />
   </component>
