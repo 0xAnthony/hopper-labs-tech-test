@@ -1,0 +1,80 @@
+@use "../styles/variables.scss" as *;
+@use "@/styles/mixins.scss" as *;
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
+  @include lg {
+    padding: 6rem;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.card {
+  padding: 1.5rem;
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  @include lg {
+    gap: 2rem;
+    padding: 2rem;
+  }
+}
+
+.currentBalance {
+  margin-top: 0.5rem;
+  margin-left: 0.75rem;
+  font-size: 1rem;
+}
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+& > * {
+  padding: 1rem;
+    height: 3rem;
+    border-top: $soft-border;
+    border-bottom: $soft-border;
+
+&:first-child {
+   border-radius: 2rem 0 0 2rem;
+   border-left: $soft-border;
+ }
+
+&:last-child {
+   border-radius: 0 2rem 2rem 0;
+   border-right: $soft-border;
+ }
+}
+}
+
+.generalInformations {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  @include lg {
+    gap: 0;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+.infoLink {
+  margin-left: 0.5rem;
+  font-size: 1.25rem;
+}

@@ -1,0 +1,15 @@
+// Usefull CSS for development (It would be conditioned to not be imported when env.stage = prod)
+// Because UX is important, but developer's experience matters too ! ;)
+
+@use "@/styles/mixins.scss" as *;
+
+.mintUsdc {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+
+  @include lg {
+    bottom: 2rem;
+    left: 2rem;
+  }
+}

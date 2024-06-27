@@ -1,0 +1,74 @@
+@use "@/styles/variables.scss" as *;
+
+.steps {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  gap: 4rem;
+
+  li {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .dot {
+      content: " ";
+      display: inline-block;
+      height: 2rem;
+      width: 2rem;
+      border-radius: 50%;
+      border: solid 2px black;
+
+      &:after {
+        display: inline-block;
+        content: " ";
+        border-top: solid 2px black;
+        transform: translateX(2rem) translateY(2px);
+        height: 1px;
+        width: 6rem;
+      }
+    }
+
+    &:last-child .dot:after {
+      display : none;
+    }
+
+    &.active .dot {
+      background: $orange;
+    }
+
+    &.complete .dot {
+      background: $green;
+
+      &:after {
+        border-top: solid 2px $green;
+      }
+    }
+
+    &.incomplete .dot {
+      background: $red;
+    }
+  }
+}
+
+.loading .active .dot {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    background-color: $orange;
+  }
+  50% {
+    background-color: $orange;
+  }
+  51% {
+    background-color: $green;
+  }
+  100% {
+    background-color: $green;
+  }
+}
