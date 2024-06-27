@@ -28,7 +28,7 @@ export const DepositTable: React.FC<DepositTableProps> = ({logs}) => {
                     <tr key={log.transactionHash}>
                         <td>
                             {log.blockData ?
-                                new Date(`${log.blockData.timestamp.toString()}000`).toLocaleString()
+                                new Date(parseInt(`${log.blockData.timestamp.toString()}000`).toLocaleString()
                                 : "Error fetching time"}
                         </td>
                         <td>
